@@ -374,7 +374,7 @@ void update_info(void)
 	} else {
 		n = snprintf(rt, rlen, "%s", mark);
 		if (img.ss.on)
-			n += snprintf(rt + n, rlen - n, "%ds | ", img.ss.delay);
+			n += snprintf(rt + n, rlen - n, "%ds (%ds) | ", img.ss.delay, (filecnt - (sel + 1)) * img.ss.delay);
 		if (img.gamma != 0)
 			n += snprintf(rt + n, rlen - n, "G%+d | ", img.gamma);
 		n += snprintf(rt + n, rlen - n, "%3d%% | ", (int) (img.zoom * 100.0));
